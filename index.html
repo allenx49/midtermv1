@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Midterm</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+		   
+		 <script type="text/javascript" src="neiu.js"></script>
+		 <script type="text/javascript" src="nest.js"></script>
+
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 800px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.98043174255184, -87.71831881042631],
+              zoom: 17
+          });
+
+         L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
+               maxZoom: 18,
+               minZoom: 16
+            }).addTo(map);
+			
+		var bbh = L.icon({
+			iconUrl: 'bbh.png', // url that links to the icon image file
+			iconSize:     [50, 50], // size of the icon image in pixels
+			iconAnchor:   [20, 20], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+			popupAnchor:  [0, -5] // point from which the popup should open, relative to the iconAnchor
+		});
+		
+		var lib = L.icon({
+			iconUrl: 'lib.png', 
+			iconSize:     [40, 40], 
+			iconAnchor:   [25, 30],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var su = L.icon({
+			iconUrl: 'su.png', 
+			iconSize:     [38, 38], 
+			iconAnchor:   [20, 15],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var fa = L.icon({
+			iconUrl: 'fa.png', 
+			iconSize:     [43, 43], 
+			iconAnchor:   [20, 20],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var b = L.icon({
+			iconUrl: 'b.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [15, 20],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var c = L.icon({
+			iconUrl: 'c.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [20, 22],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var e = L.icon({
+			iconUrl: 'e.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [15, 15],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var cbm = L.icon({
+			iconUrl: 'cbm.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [15, 22],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var lwh = L.icon({
+			iconUrl: 'lwh.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [20, 20],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var pe = L.icon({
+			iconUrl: 'pe.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [15, 20],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var d = L.icon({
+			iconUrl: 'd.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [20, 10],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var nest1 = L.icon({
+			iconUrl: 'nest.png', 
+			iconSize:     [45, 45], 
+			iconAnchor:   [20, 10],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var park = L.icon({
+			iconUrl: 'park.png', 
+			iconSize:     [20, 20], 
+			iconAnchor:   [5, 10],
+			popupAnchor:  [0, -5] 
+		});
+		
+		var pf = L.icon({
+			iconUrl: 'pficon.png', 
+			iconSize:     [30, 30], 
+			iconAnchor:   [15, 15],
+			popupAnchor:  [0, -5] 
+		});
+		
+		
+		var overlaycolor = { 
+			"color": "#fdb813"
+		};
+
+		
+		L.geoJson(neiu, {
+			style: overlaycolor
+			
+			}).addTo(map);
+			
+		L.geoJson(nest, {
+			style: overlaycolor
+			
+			}).addTo(map);
+			
+		var marker1 = L.marker([41.98035202340356, -87.717267379256], {icon: bbh}).addTo(map);
+		var marker2 = L.marker([41.980347609314485, -87.71911287286396], {icon: lib}).addTo(map);
+		var marker3 = L.marker([41.98132981813238, -87.71849275120053], {icon: su}).addTo(map);
+		var marker4 = L.marker([41.9810427505187, -87.71905690885704], {icon: fa}).addTo(map);
+		var marker5 = L.marker([41.98112515197594, -87.71744651891602], {icon: b}).addTo(map);
+		var marker6 = L.marker([41.98181516668731, -87.71742291968056], {icon: c}).addTo(map);
+		var marker7 = L.marker([41.98177423382054, -87.71882314029544], {icon: e}).addTo(map);
+		var marker8 = L.marker([41.98239991906963, -87.7174701181284], {icon: cbm}).addTo(map);
+		var marker9 = L.marker([41.98245480952958, -87.71853461795612], {icon: lwh}).addTo(map);
+		var marker10 = L.marker([41.97791317810834, -87.7172925220242], {icon: pe}).addTo(map);
+		var marker11 = L.marker([41.981802600786466, -87.71800669002958], {icon: d}).addTo(map);
+		var marker12 = L.marker([41.97971504082589, -87.71981868167907], {icon: nest1}).addTo(map);
+		
+		var p1 = L.marker([41.98244047507833, -87.72028126904972], {icon: park}).addTo(map);
+		var p2 = L.marker([41.98173885269441, -87.72063429580056], {icon: park}).addTo(map);
+		var p3 = L.marker([41.98116205680933, -87.72028789881786], {icon: park}).addTo(map);
+		var p4 = L.marker([41.980395206113755, -87.72025759525243], {icon: pf}).addTo(map);
+		var p5 = L.marker([41.97928144539001, -87.7203958091176], {icon: park}).addTo(map);
+		var p6 = L.marker([41.97930199465735, -87.71925139837569], {icon: park}).addTo(map);
+		var p7 = L.marker([41.97817177510627, -87.72037369490036], {icon: park}).addTo(map);
+		
+		
+		var pic1 = '<img src="bbh1.png" alt="Bernard J. Brommel Hall" width="350">';
+		var pic2 = '<img src="lib1.png" alt="Ronald Williams Library" width="350">';
+		var pic3 = '<img src="su1.jpg" alt="Student Union" width="350">';
+		var pic4 = '<img src="fa1.png" alt="Steinberg Fine Arts Center" width="350">';
+		var pic5 = '<img src="b1.png" alt="Building B" width="350">';
+		var pic6 = '<img src="c1.png" alt="Sachs Administration Building" width="350">';
+		var pic7 = '<img src="c1.png" alt="Building E" width="350">';
+		var pic8 = '<img src="cbm1.png" alt="College of Business and Management" width="350">';
+		var pic9 = '<img src="lwh1.png" alt="Lech Walesa Hall" width="350">';
+		var pic10 = '<img src="pe1.png" alt="Physical Education Complex" width="350">';
+		var pic12 = '<img src="nest1.png" alt="NEST" width="350">';
+		var pic13 = '<img src="pfpic.png" alt="NEST" width="350">';
+		marker1.bindTooltip("This is Bernard J. Brommel Hall, NEIU's main Science building." + "<br>" + "The GES Department is located here." + '<br>' + pic1);
+		marker2.bindTooltip('Ronald Williams Library is the main library on campus.' + '<br>' + 'On top of books, one can book study rooms, laptops, cameras, etc.' + '<br>' + 'The library is also home to many events.' + '<br>' + 'Typical hours are 8AM-9PM Mon-Thurs,' + '<br>' + '8AM-6PM Friday, 9AM-5PM Saturday, and 12PM-8PM Sundays ' + '<br>' + pic2);
+		marker3.bindTooltip('The Student Union is typically open 8AM-10PM Monday' + '<br>' + 'through Friday during the school year.' + '<br>' + 'Home to the welcome desk, box office, various event and study spaces,' + '<br>' + 'as well as the cafeteria.' + '<br>' + pic3);
+		marker4.bindTooltip('Salme Harju Steinberg Fine Arts Center is home to' + '<br>' + 'various arts disciplines and features' + '<br>' + 'a gallery and concert hall' + '<br>' + pic4);
+		marker5.bindTooltip('Building B is home to various administrative programs,' + '<br>' + 'incuding Career Services, Dean of Students, Honors Program,' + '<br>' + 'McNair Scholars Program, and Nontraditional Degree Programs.' + '<br>' + pic5);
+		marker6.bindTooltip('The Sachs Admnistrative Building is the main admistrative building at NEIU.' + '<br>' + pic6);
+		marker7.bindTooltip('Building E contains the Auditorium, Bookstore,' + '<br>' + 'and Health Services/First Aid' + '<br>' + pic7);
+		marker8.bindTooltip('This is the College of Business and Management.' + '<br>' + pic8);
+		marker9.bindTooltip('Lech Walesa Hall contains the Academic Advisement' + '<br>' + 'and Testing Center, College of Education, and Graduate College,' + '<br>' + 'as well as the International Programs, and other' + '<br>' + 'academic services for students.' + '<br>' + pic9);
+		marker10.bindTooltip('The Physical Education Complex has various athletic facilities' + '<br>' + 'open to students, including a gym, courts and fields,' + '<br>' + 'swimming pool, weight room, and other facilities' + '<br>' + pic10);
+		marker11.bindTooltip('Building D contains the Accessibility Center, Admissions,' + '<br>' + 'Counseling, Enrollment Services, Financial Aid, Scholarships,' + '<br>' + 'Student Employment, Transfer Center, and Veterans Services.' + '<br>' + '(no picture available)');
+		marker12.bindTooltip("The Nest is NEIU's first student dormitory." + '<br>' + pic12);
+		p4.bindTooltip("This is the main Parking Facility." + '<br>' + pic13);
+		
+		
+		
+        </script>
+		<p>Icons created by self</p>
+   </body>
+</html>
